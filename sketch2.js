@@ -13,7 +13,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1080, 980);
+  createCanvas(windowWidth - 100, windowHeight - 100);
   textAlign(CENTER, CENTER);
   
 
@@ -129,4 +129,8 @@ function mousePressed() {
       break;
     }
   }
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
