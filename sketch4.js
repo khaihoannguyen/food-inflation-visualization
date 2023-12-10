@@ -16,7 +16,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth - 100, windowHeight - 100);
+  createCanvas(windowWidth, windowHeight);
   textAlign(RIGHT, CENTER);
 
   // Extract years and products from the CSV file
@@ -45,7 +45,7 @@ function draw() {
   textSize(24);
   text(
     'Choose the product to see how its price changes since 2008',
-    windowWidth / 2,
+    windowWidth / 2 + 250,
     60
   );
 

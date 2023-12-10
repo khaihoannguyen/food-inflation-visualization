@@ -15,9 +15,10 @@ canvas {
 
 #button-container {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  margin-top: 20px;
-  padding: 10px;
+  margin-top: 40px;
+  padding: 20px;
   background-color: #1F2421;
 }
 
@@ -45,4 +46,26 @@ a:hover {
 .grid-label {
   text-align: center;
   font-size: 12px;
+}
+
+.One-Block {
+  display: flex;
+  flex-direction: column;
+  padding: 0vw 10vw 0vw 5vw;
+}
+
+.Multiple-Block {
+  display: flex;
+  flex-direction: row;
+}
+
+.Heading{
+  display: flex;
+  flex-direction: column;
+  padding: 4vw 50vw 4vw 5vw;
+}
+
+img {
+  width: 10vw;
+  padding: 1vw 0vw 3vw 0vw;
 }

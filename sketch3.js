@@ -10,7 +10,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth - 100, windowHeight - 100);
+  createCanvas(windowWidth, windowHeight);
   redraw();
 
   // Extract years and foods from the CSV file
@@ -42,7 +42,7 @@ function drawMatrix() {
     for (let j = 0; j < foods.length; j++) {
       let x = (i + 1) * cellWidth + 50;
       let y = (j + 1) * cellHeight;
-      let circleSize = sqrt(prices[i][j]) * 50;
+      let circleSize = sqrt(prices[i][j]) * 40;
 
       noStroke();
 
@@ -67,13 +67,13 @@ function drawMatrix() {
   textAlign(CENTER, BOTTOM);
   for (let i = 0; i < years.length; i++) {
     let x = (i + 1) * cellWidth + 50;
-    text(years[i], x, height - 40);
+    text(years[i], x, height - 20);
   }
 
   textAlign(RIGHT, CENTER);
   for (let j = 0; j < foods.length; j++) {
     let y = (j + 1) * cellHeight;
-    text(foods[j], 100, y);
+    text(foods[j], 105, y);
   }
 }
 

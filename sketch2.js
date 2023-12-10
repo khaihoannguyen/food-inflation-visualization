@@ -13,7 +13,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowHeight - 100, windowHeight - 100);
+  createCanvas(windowHeight, windowHeight);
   textAlign(CENTER, CENTER);
   
   // Extract years and products from the CSV file
@@ -38,7 +38,6 @@ function draw() {
   background('#1F2421');
 
   // Add instruction
-
   fill('#DCEDB9');
   textSize(24);
   text(
@@ -60,12 +59,12 @@ function draw() {
     textSize(20);
     text(
       `$${data[selectedYear][selectedProduct].toFixed(2)}`,
-      width / 2,
-      height / 2 + 370);
+      width - 70,
+      height / 2 + 30);
 
     fill('#DCEDB9');
     textSize(20);
-    text(products[selectedProduct], width / 2, height / 2 + 390);
+    text(products[selectedProduct], width - 70, height/2);
   }
 }
 
