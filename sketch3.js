@@ -28,7 +28,7 @@ function setup() {
 }
 
 function draw() {
-  background(255);
+  background('#1F2421');
   drawGrid();
   drawMatrix();
 }
@@ -50,13 +50,13 @@ function drawMatrix() {
       if (mouseX > x - circleSize / 2 && mouseX < x + circleSize / 2 &&
           mouseY > y - circleSize / 2 && mouseY < y + circleSize / 2) {
         // Hover effect: Change color and show price
-        fill(255, 0, 0); // Change the color to red (adjust as needed)
+        fill('#A5BE00'); // Change the color
         textAlign(CENTER, CENTER);
         textSize(12);
         text(`$${prices[i][j].toFixed(2)}`, x, y - circleSize / 2 - 10);
       } else {
         // Draw normal circle
-        fill(200);
+        fill('#DCEDB9');
       }
 
       ellipse(x, y, circleSize, circleSize);

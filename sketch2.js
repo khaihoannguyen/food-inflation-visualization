@@ -13,17 +13,16 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth - 100, windowHeight - 100);
+  createCanvas(windowHeight - 100, windowHeight - 100);
   textAlign(CENTER, CENTER);
   
-
   // Extract years and products from the CSV file
   years = table.getColumn("Year");
   products = table.columns.slice(2);
 
   // Initialize button colors
-  buttonColors = Array(years.length).fill(color(200));
-  productButtonColors = Array(products.length).fill(color(200));
+  buttonColors = Array(years.length).fill(color('#DCE2AA'));
+  productButtonColors = Array(products.length).fill(color('#C5D86D'));
 
   // Convert the table to a 2D array for easy access to data
   for (let i = 0; i < table.getRowCount(); i++) {
@@ -36,14 +35,14 @@ function setup() {
 }
 
 function draw() {
-  background(255);
+  background('#1F2421');
 
   // Add instruction
 
-  fill(0);
+  fill('#DCEDB9');
   textSize(24);
   text(
-    'Choose the produce and click on the year to see how price changes in each year',
+    'Choose the product and the year to see the price',
     width / 2,
     60
   );
@@ -57,14 +56,14 @@ function draw() {
     ellipse(width / 2, height / 2, circleRadius * 2);
 
     // Add the text for price and name of product
-    fill(0);
+    fill('#DCEDB9');
     textSize(20);
     text(
       `$${data[selectedYear][selectedProduct].toFixed(2)}`,
       width / 2,
       height / 2 + 370);
 
-    fill(0);
+    fill('#DCEDB9');
     textSize(20);
     text(products[selectedProduct], width / 2, height / 2 + 390);
   }
@@ -81,7 +80,7 @@ function drawTimeline() {
     fill(buttonColors[i]);
     ellipse(x, y, 20, 20);
 
-    fill(0);
+    fill('#DCEDB9');
     textSize(12);
     text(years[i], x, y + 25);
   }
@@ -94,7 +93,7 @@ function drawTimeline() {
     fill(productButtonColors[i]);
     rect(x, y, 30, 30);
 
-    fill(0);
+    fill('#DCEDB9');
     textSize(12);
     text(products[i], x + 85, y + 15);
   }
@@ -109,8 +108,8 @@ function mousePressed() {
 
     if (dist(mouseX, mouseY, x, y) < 10) {
       // Change the color of the clicked year button
-      buttonColors = Array(years.length).fill(color(200)); // Reset all year button colors
-      buttonColors[i] = color(255, 0, 0); // Set the clicked year button to red
+      buttonColors = Array(years.length).fill(color('#DCE2AA')); // Reset all year button colors
+      buttonColors[i] = color('#F2F3D9'); // Set the clicked year button to different color
       selectedYear = i;
       break;
     }
@@ -123,8 +122,8 @@ function mousePressed() {
 
     if (mouseX > x && mouseX < x + 30 && mouseY > y && mouseY < y + 30) {
       // Change the color of the clicked product button
-      productButtonColors = Array(products.length).fill(color(200)); // Reset all product button colors
-      productButtonColors[i] = color(0, 0, 255); // Set the clicked product button to blue
+      productButtonColors = Array(products.length).fill(color('#C5D86D')); // Reset all product button colors
+      productButtonColors[i] = color('#F2F3D9'); // Set the clicked product button to different color
       selectedProduct = i;
       break;
     }

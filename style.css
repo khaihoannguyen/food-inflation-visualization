@@ -1,8 +1,48 @@
-html, body {
+/* style.css */
+
+body {
+  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #1F2421;
+  color: #DCEDB9;
 }
 
 canvas {
   display: block;
+  margin: 20px auto;
+}
+
+#button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #1F2421;
+}
+
+a {
+  text-decoration: none;
+  color: #DCEDB9;
+  padding: 10px;
+  border: 1px solid #A5BE00;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+a:hover {
+  background-color: #A5BE00;
+}
+
+#sketch-container {
+  margin: 20px auto;
+}
+
+.grid-line {
+  stroke: #444;
+}
+
+.grid-label {
+  text-align: center;
+  font-size: 12px;
 }
